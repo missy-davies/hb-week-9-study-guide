@@ -7,7 +7,22 @@ def bubble_sort(lst):
         >>> bubble_sort([3, 5, 7, 2, 4, 1])
         [1, 2, 3, 4, 5, 7]
     """
-    pass
+
+    # use range len(lst) - 1 because you want indexes
+    for i in range(len(lst) - 1):
+        swap = False
+        for j in range(len(lst) - 1):
+            if lst[j] > lst[j + 1]:
+                # have to use list unpacking here 
+                lst[j], lst[j + 1] = lst[j + 1], lst[j]
+                swap = True
+        if not swap:
+            break
+            
+    return lst 
+
+
+print(bubble_sort([3, 5, 7, 2, 4, 1]))
 
 
 def merge_lists(list1, list2):
